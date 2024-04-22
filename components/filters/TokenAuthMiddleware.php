@@ -1,5 +1,6 @@
 <?php
 
+namespace app\components\filters;
 
 use yii\base\ActionFilter;
 use yii\web\UnauthorizedHttpException;

@@ -1,5 +1,6 @@
 <?php
 
+namespace app\controllers\api\v1;
 
 class MonthsController extends \yii\web\Controller
 {
