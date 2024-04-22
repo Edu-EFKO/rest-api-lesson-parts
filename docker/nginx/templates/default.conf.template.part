@@ -1,0 +1,26 @@
+...
+
+server {
+    server_name default_server;
+    root /var/www/html/web;
+    resolver 127.0.0.11;
+
+    ...
+
+    ...
+
+    ...
+
+    ...
+
+    location ~ ^/swagger-ui$ {
+        return 301 $scheme://$host:${APP_WEB_PORT}$request_uri/;
+    }
+
+    location ~ ^/swagger-ui/(.*)$ {
+        proxy_pass http://swagger:8080/$1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}

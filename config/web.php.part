@@ -1,0 +1,14 @@
+<?php
+
+return [
+    ...
+    'components' => [
+        'request' => [
+            'cookieValidationKey' => 'sF6ugQqWMYrNL4Q',
+            'parsers' => [
+                'application/json' => \yii\web\JsonParser::class,
+            ],
+        ],
+        ...
+    ],
+];

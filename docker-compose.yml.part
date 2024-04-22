@@ -1,0 +1,21 @@
+services:
+
+  php-fpm:
+    ...
+    environment:
+      X_API_KEY: ${X_API_KEY}
+    ...
+
+  nginx:
+    ...
+    environment:
+      ...
+      APP_WEB_PORT: ${APP_WEB_PORT}
+    ...
+
+  swagger:
+    image: swaggerapi/swagger-ui:v5.16.2
+    environment:
+      URL: /swagger-ui/spec.yml
+    volumes:
+      - ./swagger/spec.yml:/usr/share/nginx/html/spec.yml
